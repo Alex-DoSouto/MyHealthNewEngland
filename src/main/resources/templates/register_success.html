@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Succeeded</title>
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" th:href="@{style.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,300&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar_container">
+            <a href="#home" id="logo">MyHEALTH</a>
+            <div class="navbar_toggle" id="mobile_menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar_menu">
+                <li class="navbar_item">
+                    <a href="index.html" class="navbar_links" id="home_page">Profile</a>
+                </li>
+                <li class="navbar_item">
+                    <a href="#info" class="navbar_links" id="info_page">History</a>
+                </li>
+                <li class="navbar_item">
+                    <a href="#reviews" class="navbar_links" id="Reviews_page">Comments</a>
+                </li>
+                <li class="navbar_button">
+                    <a th:href= "@{/register}" class="loginup_button" id="loginup">Login/Signup</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="hero" id="home">
+        <div class="hero__container">
+            <h1 class="hero__heading">Registration <span>Complete</span></h1>
+            <p class="hero__description">Click the button below to Login</p>
+            <button class="main__btn"><a th:href="@{/login}">Login</a></button>
+        </div>
+    </div>
+
+    <script src="../static/script.js"></script>
+    <script th:src="@{script.js}"></script>
+</body>
+</html>

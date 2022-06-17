@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyHealth Home Page</title>
+    <link rel="stylesheet" th:href="@{style.css}">
+    <link rel="stylesheet" href="../static/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,300&display=swap"
+      rel="stylesheet">
+
+</head>
+<body>
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <div class="navbar_container">
+            <a href="#home" id="logo">MyHEALTH</a>
+            <div class="navbar_toggle" id="mobile_menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <ul class="navbar_menu">
+                <li class="navbar_item">
+                    <a href="#home" class="navbar_links" id="home_page">Profile</a>
+                </li>
+                <li class="navbar_item">
+                    <a href="#info" class="navbar_links" id="info_page">History</a>
+                </li>
+                <li class="navbar_item">
+                    <a href="#reviews" class="navbar_links" id="Reviews_page">Comments</a>
+                </li>
+                <li class="navbar_button">
+                    <a th:href= "@{/register}" class="loginup_button" id="loginup">Login/Signup</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--Main Info Section -->
+    <div class="hero" id="home">
+        <div class="hero__container">
+          <h1 class="hero__heading">Care about <span>HealthCare</span></h1>
+          <p class="hero__description">Let others know your experience</p>
+          <button class="main__btn"><a href="#">Learn more about providers</a></button>
+        </div>
+      </div>
+
+    <!-- info section -->
+    <div class="main" id="info">
+        <div class="main__container">
+          <div class="iframe_container">
+            <iframe width="560" height="560" 
+            src="https://www.youtube.com/embed/pc1jlelzmPY" title="YouTube video player" 
+            frameborder="0" allow="accelerometer; autoplay; 
+            clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
+          <div class="main__content">
+            <h1>Healthcare is one of the most import things in life.</h1>
+            <h2>Use us to learn and share experiences so we can all make more informed choices</h2>
+            <p>Click on Info to start learning about Providers now!</p>
+            <button class="main__btn"><a href="#">Info</a></button>
+          </div>
+        </div>
+      </div>
+    <script src="../static/script.js"></script>
+    <script th:src="@{script.js}"></script>
+</body>
+</html>
