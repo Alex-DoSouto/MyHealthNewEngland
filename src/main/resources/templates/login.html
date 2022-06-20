@@ -5,7 +5,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyHealth Login</title>
-    <link rel="stylesheet" href="../static/style.css">
     <link rel="stylesheet" th:href="@{style.css}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,8 +12,45 @@
           rel="stylesheet">
 </head>
 <body>
-<h2>test</h2>
-    <script src="../static/script.js"></script>
+<nav class="navbar">
+    <div class="navbar_container">
+        <a href="#home" id="logo">MyHEALTH</a>
+        <div class="navbar_toggle" id="mobile_menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+        <ul class="navbar_menu">
+            <li class="navbar_item">
+                <a href="#home" class="navbar_links" id="home_page">Profile</a>
+            </li>
+            <li class="navbar_item">
+                <a href="#info" class="navbar_links" id="info_page">History</a>
+            </li>
+            <li class="navbar_item">
+                <a href="#reviews" class="navbar_links" id="Reviews_page">Comments</a>
+            </li>
+            <li class="navbar_button">
+                <a th:href= "@{/register}" class="loginup_button" id="loginup">Login/Signup</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<form class= "bodyga" th:action="@{/login}" method="post" >
+        <h4>Enter Login Information</h4>
+        <div th:if="${param.error}" class="alert alert-error">
+            Invalid username and password.
+        </div>
+        <div th:if="${param.logout}" class="alert alert-success">
+            You have been logged out.
+        </div>
+        <table class="table">
+            <tr><td><input name="email" type="email" placeholder="Enter Email"  required autofocus/></td></tr>
+            <tr><td><input name="password" type="password" placeholder="Password"/> </td></tr>
+            <tr><td><button class="main__btn" id="reg_btn" type="submit"><a>Login</a></td></tr>
+            <tr><td><a th:href="@{/register}">Don't have an account? Click here to Register.</a></td></tr>
+        </table>
+</form>
     <script th:src="@{script.js}"></script>
 </body>
 </html>

@@ -55,43 +55,10 @@ const hideMobileMenu = () => {
 menuLinks?.addEventListener('click', hideMobileMenu);
 logo?.addEventListener('click', hideMobileMenu);
 
-// validation for the registration
-/* const user = document.getElementById('name')
-const password = document.getElementById('password')
-const form = document.getElementById('form')
-const errorElement = document.getElementById('error')
-const mail = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-const email = document.getElementById('emailID')
 
-form?.addEventListener('submit', (e) => {
-    let messages = []
-    e.preventDefault()
-    if (user.value === '' || user.value == null) {
-        messages.push('Name is required')
-        errorElement.innerText = messages
-        messages.shift()
-
-    } else if (!mail.test(email.value)){
-        messages.push('Please enter a proper email address')
-        errorElement.innerText = messages
-        messages.shift() 
-
-    } else if (password.value.length <= 6) {
-        messages.push('Password must be longer than 6 characters')   
-        errorElement.innerText = messages
-        messages.shift()
-
-
-    } else {
-        window.location.href = "register_success.html"
-    }
-    
-
-
-}); */
 
 // for loop to generate options in dropout
-let select = document.getElementById("selt");
+/* let select = document.getElementById("selt");
 let options = ["Massachusetts", "Rhode Island", "Florida", "Maine", "New York", "Virginia"];
 
 for (var i = 0; i < options.length; i++) {
@@ -100,4 +67,4 @@ for (var i = 0; i < options.length; i++) {
     el.textContent = opt;
     el.value = opt;
     select.appendChild(el);
-}
+} */

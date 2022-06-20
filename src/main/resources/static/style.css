@@ -449,9 +449,10 @@
     justify-content: center;
     flex-direction: column;
     align-content: flex-end;
-    background-color: #131313;
+    background-color: #000000;
     color: #fff;
     font-size: 30px;
+    padding: 200px 0;
 }
 table, td, tr {
     margin:auto;
