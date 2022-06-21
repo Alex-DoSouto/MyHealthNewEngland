@@ -68,3 +68,4 @@ for (var i = 0; i < options.length; i++) {
     el.value = opt;
     select.appendChild(el);
 } */
+//Used to give logout link functionality

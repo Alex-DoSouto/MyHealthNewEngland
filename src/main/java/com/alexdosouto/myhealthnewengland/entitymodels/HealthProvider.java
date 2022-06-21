@@ -12,7 +12,7 @@ import javax.persistence.Table;
 @Table(name = "health_providers")
 public class HealthProvider {
     @Id
-    @Column(nullable = false, name = "provider_name")
+    @Column(nullable = false, unique = false, name = "provider_name")
     private String pName;
 
     @Column(nullable = false, name = "provider_hyperlink")

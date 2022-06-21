@@ -24,16 +24,20 @@
             </div>
             <ul class="navbar_menu">
                 <li class="navbar_item">
-                    <a href="#home" class="navbar_links" id="home_page">Profile</a>
+                    <a th:href="@{/profile}"  class="navbar_links" id="home_page">Profile</a>
                 </li>
                 <li class="navbar_item">
-                    <a href="#info" class="navbar_links" id="info_page">History</a>
+                    <a th:href="@{/history}" class="navbar_links" id="info_page">History</a>
                 </li>
                 <li class="navbar_item">
                     <a href="#reviews" class="navbar_links" id="Reviews_page">Comments</a>
                 </li>
                 <li class="navbar_button">
-                    <a th:href= "@{/register}" class="loginup_button" id="loginup">Login/Signup</a>
+                    <a class="loginup_button" id="loginup" sec:authorize="isAnonymous()" th:href= "@{/register}">Login/Signup</a>
+                    <form name="logoutform" th:action="@{/logout}" method="post" th:hidden="true">
+                        <input type="submit" value="Logout">
+                    </form>
+                    <a class="loginup_button" sec:authorize="isAuthenticated()" href="javascript:document.logoutform.submit()">Logout</a>
                 </li>
             </ul>
         </div>
@@ -44,7 +48,7 @@
         <div class="hero__container">
           <h1 class="hero__heading">Care about <span>HealthCare</span></h1>
           <p class="hero__description">Let others know your experience</p>
-          <button class="main__btn"><a href="#">Learn more about providers</a></button>
+          <button class="main__btn"><a th:href="@{/state}">Learn more about providers</a></button>
         </div>
       </div>
 
@@ -65,6 +69,7 @@
           </div>
         </div>
       </div>
-    <script src="../static/script.js"></script>
+    <script th:src="@{script.js}"></script>
+<script
 </body>
 </html>
