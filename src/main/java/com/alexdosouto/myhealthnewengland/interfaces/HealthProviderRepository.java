@@ -11,6 +11,6 @@ public interface HealthProviderRepository extends JpaRepository<HealthProvider, 
     @Query("SELECT DISTINCT p.pState FROM HealthProvider p")
     List<String> findDistinctState();
 
-    // @Query("SELECT * FROM HealthProvider p WHERE p.pState LIKE %?1%")
+
     List<HealthProvider> findBypState(String state);
 }

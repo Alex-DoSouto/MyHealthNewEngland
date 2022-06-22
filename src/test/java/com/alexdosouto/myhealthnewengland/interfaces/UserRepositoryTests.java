@@ -2,6 +2,7 @@ package com.alexdosouto.myhealthnewengland.interfaces;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import com.alexdosouto.myhealthnewengland.entitymodels.Role;
 import com.alexdosouto.myhealthnewengland.entitymodels.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,7 +17,10 @@ import org.springframework.test.annotation.Rollback;
 @Rollback(false)
 public class UserRepositoryTests {
     @Autowired
-    private UserRepository repo;
+    private UserRepository userRepo;
+
+    @Autowired
+    private RoleRepository roleRepo;
 
     @Autowired
     private TestEntityManager entityManager;
@@ -28,7 +32,7 @@ public class UserRepositoryTests {
         user.setUPassword("password");
         user.setUName("mud");
 
-        User savedUser = repo.save(user);
+        User savedUser = userRepo.save(user);
 
         User existUser = entityManager.find(User.class, savedUser.getUId());
 
@@ -39,8 +43,35 @@ public class UserRepositoryTests {
     public void testFindUserByUEmail() {
         String uEmail = "Test@email.com";
 
-        User user = repo.findByUEmail(uEmail);
+        User user = userRepo.findByUEmail(uEmail);
         assertThat(user).isNotNull();
     }
 
+    @Test
+    public void testAddRoleToNewUser() {
+        User user = new User();
+        user.setUEmail("mud@dud.com");
+        user.setUPassword("password");
+        user.setUName("mud");
+
+        Role roleUser = roleRepo.findByName("User");
+        user.addRole(roleUser);
+
+        User savedUser = userRepo.save(user);
+
+        assertThat(savedUser.getRoles().size()).isEqualTo(1);
+    }
+    @Test
+    public void testAddRolesToExistingUser() {
+        User user = userRepo.findById(1L).get();
+        Role roleUser = roleRepo.findByName("User");
+        user.addRole(roleUser);
+
+        Role roleAdmin = new Role(2L);
+        user.addRole(roleAdmin);
+
+        User savedUser = userRepo.save(user);
+
+        assertThat(savedUser.getRoles().size()).isEqualTo(2);
+    }
 }

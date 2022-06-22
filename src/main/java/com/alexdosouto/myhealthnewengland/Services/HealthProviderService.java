@@ -1,6 +1,7 @@
 package com.alexdosouto.myhealthnewengland.Services;
 
 
+import com.alexdosouto.myhealthnewengland.entitymodels.HealthProvider;
 import com.alexdosouto.myhealthnewengland.interfaces.HealthProviderRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -16,4 +17,5 @@ public class HealthProviderService {
     public List<String> findDistinctState() {
         return repo.findDistinctState();
     }
+
 }
