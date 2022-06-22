@@ -44,7 +44,7 @@
 <form class="bodyga">
         <h2>Please Select your <strong style ="color:#da22ff">State</strong> </h2>
         <Select id="selt" name="states">
-            <option> Select State</option>
+            <option th:each="state : ${statedropdown}" th:text="${state}"></option>
         </Select>
         <button class="main__btn"><a href="index.html">Search</a></button>
     </form>
