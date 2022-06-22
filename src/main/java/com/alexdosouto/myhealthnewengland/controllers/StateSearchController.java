@@ -5,6 +5,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class StateSearchController {
@@ -17,5 +19,11 @@ public class StateSearchController {
     public String stateSearch(Model model) {
         model.addAttribute("statedropdown", healthProviderService.findDistinctState());
         return "State";
+    }
+
+    @GetMapping("/state/{results}")
+    public String stateResults(@PathVariable String results, Model model) {
+        model.addAttribute("stateresults", healthProviderService.findBypState(results));
+        return "state_search_results";
     }
 }

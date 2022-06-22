@@ -454,7 +454,8 @@
     font-size: 30px;
     padding: 200px 0;
 }
-table, td, tr {
+
+.mytable, .mytable td, .mytable tr {
     margin:auto;
     display: flex;
     align-items: center;

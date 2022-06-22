@@ -18,4 +18,7 @@ public class HealthProviderService {
         return repo.findDistinctState();
     }
 
+    public List<HealthProvider> findBypState(String state) {
+        return repo.findBypState(state);
+    }
 }

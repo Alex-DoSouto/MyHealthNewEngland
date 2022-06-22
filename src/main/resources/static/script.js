@@ -56,16 +56,17 @@ menuLinks?.addEventListener('click', hideMobileMenu);
 logo?.addEventListener('click', hideMobileMenu);
 
 
+// search button functionality which brings user to state search results
+const state_btn = document.getElementById("stateb_btn")
+const stateSelect = document.getElementById("stateSelect")
 
-// for loop to generate options in dropout
-/* let select = document.getElementById("selt");
-let options = ["Massachusetts", "Rhode Island", "Florida", "Maine", "New York", "Virginia"];
+if(stateSelect != null) {
+    let stateValue = stateSelect.value;
+    state_btn.addEventListener("click", function (event){
+        event.preventDefault()
+        window.location.href = `/state/${stateValue}`
 
-for (var i = 0; i < options.length; i++) {
-    var opt = options[i];
-    var el = document.createElement("option");
-    el.textContent = opt;
-    el.value = opt;
-    select.appendChild(el);
-} */
-//Used to give logout link functionality
+    })
+}
+
+
