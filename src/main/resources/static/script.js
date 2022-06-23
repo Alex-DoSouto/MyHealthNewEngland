@@ -16,6 +16,7 @@ const highLightMenu = () => {
     const homeMenu = document.querySelector('#home_page')
     const infoMenu = document.querySelector('#info_page')
     const reviewMenu = document.querySelector('#reviews_page')
+    const userMenu = document.querySelector('#user_name')
     let scrollScreen = window.scrollY
 
     // adds 'highlight' class to menu

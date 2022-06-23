@@ -460,6 +460,7 @@
     display: flex;
     align-items: center;
     margin-top: 5px;
+    front-size: 24px;
 }
 
 .table input, .table select {

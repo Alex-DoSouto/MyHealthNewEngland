@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,7 +15,7 @@
 <body>
 <nav class="navbar">
     <div class="navbar_container">
-        <a href="#home" id="logo">MyHEALTH</a>
+        <a th:href="@{/}" id="logo">MyHEALTH</a>
         <div class="navbar_toggle" id="mobile_menu">
             <span class="bar"></span>
             <span class="bar"></span>
@@ -36,6 +37,9 @@
                     <input type="submit" value="Logout">
                 </form>
                 <a class="loginup_button" sec:authorize="isAuthenticated()" href="javascript:document.logoutform.submit()">Logout</a>
+            </li>
+            <li class="navbar_item">
+                <span class="navbar_links"  id="user_name" sec:authorize="isAuthenticated()" sec:authentication="principal.name"></span>
             </li>
         </ul>
     </div>

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -39,9 +40,13 @@
                 </form>
                 <a class="loginup_button" sec:authorize="isAuthenticated()" href="javascript:document.logoutform.submit()">Logout</a>
             </li>
+            <li class="navbar_item">
+                <span class="navbar_links"  id="user_name" sec:authorize="isAuthenticated()" sec:authentication="principal.name"></span>
+            </li>
         </ul>
     </div>
 </nav>
+
 <div class="container">
     <table class="table table-striped table-dark text-center m-auto w-auto flex-box flex-direction-column">
         <thead class="statetable">
