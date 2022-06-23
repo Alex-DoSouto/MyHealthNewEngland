@@ -62,9 +62,9 @@ const state_btn = document.getElementById("stateb_btn")
 const stateSelect = document.getElementById("stateSelect")
 
 if(stateSelect != null) {
-    let stateValue = stateSelect.value;
     state_btn.addEventListener("click", function (event){
         event.preventDefault()
+        let stateValue = stateSelect.value;
         window.location.href = `/state/${stateValue}`
 
     })

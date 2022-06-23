@@ -38,8 +38,8 @@ public class HealthProviderRepositoryTest {
 
     @Test
     public void testFindByPState() {
-        HealthProvider hp = repo.findById("TUFTS Health").get();
-        String pState = "Massachusetts";
+        HealthProvider hp = repo.findById("Cigna").get();
+        String pState = "Rhode Island";
 
         List<HealthProvider> healthProvider = repo.findBypState(pState);
 

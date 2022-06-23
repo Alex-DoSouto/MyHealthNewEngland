@@ -25,5 +25,12 @@ public class UserService {
         user.addRole(roleUser);
         userRepo.save(user);
     }
+    public void updateUser(Long uId, String newPassword) {
+        BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+        User updateUser = userRepo.getReferenceById(uId);
+        String encodedPassword = passwordEncoder.encode(newPassword);
+        updateUser.setUPassword(encodedPassword);
 
+        userRepo.save(updateUser);
+    }
 }

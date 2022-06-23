@@ -25,7 +25,7 @@ public class User {
     @Column(nullable = false, length = 64, name = "password")
     private String uPassword;
 
-    @ManyToMany(targetEntity = HealthProvider.class, fetch = FetchType.EAGER)
+    @ManyToMany(targetEntity = HealthProvider.class)
     @JoinTable(name = "user_choice")
     private List<HealthProvider> uHealthProvider;
 
