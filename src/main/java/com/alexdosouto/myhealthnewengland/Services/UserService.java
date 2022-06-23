@@ -5,8 +5,11 @@ import com.alexdosouto.myhealthnewengland.entitymodels.User;
 import com.alexdosouto.myhealthnewengland.interfaces.RoleRepository;
 import com.alexdosouto.myhealthnewengland.interfaces.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 public class UserService {
@@ -25,12 +28,14 @@ public class UserService {
         user.addRole(roleUser);
         userRepo.save(user);
     }
-    public void updateUser(Long uId, String newPassword) {
+    public void updateUser(User user) {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
-        User updateUser = userRepo.getReferenceById(uId);
-        String encodedPassword = passwordEncoder.encode(newPassword);
-        updateUser.setUPassword(encodedPassword);
+        String encodedPassword = passwordEncoder.encode(user.getUPassword());
+        user.setUPassword(encodedPassword);
 
-        userRepo.save(updateUser);
+        userRepo.save(user);
+    }
+    public User getPrincipal() {
+        return userRepo.findByUEmail(SecurityContextHolder.getContext().getAuthentication().getName());
     }
 }

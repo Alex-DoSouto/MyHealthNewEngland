@@ -7,12 +7,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyHealth User Profile</title>
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+          integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="../static/style.css">
     <link rel="stylesheet" th:href="@{style.css}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,300&display=swap"
+          rel="stylesheet">
 </head>
 <body>
 <!-- Navbar Section -->
@@ -26,7 +28,7 @@
         </div>
         <ul class="navbar_menu">
             <li class="navbar_item">
-                <a th:href="@{/profile}"  class="navbar_links" id="home_page">Profile</a>
+                <a th:href="@{/profile}" class="navbar_links" id="home_page">Profile</a>
             </li>
             <li class="navbar_item">
                 <a th:href="@{/history}" class="navbar_links" id="info_page">History</a>
@@ -35,34 +37,61 @@
                 <a href="#reviews" class="navbar_links" id="Reviews_page">Comments</a>
             </li>
             <li class="navbar_button">
-                <a class="loginup_button" id="loginup" sec:authorize="isAnonymous()" th:href= "@{/register}">Login/Signup</a>
+                <a class="loginup_button" id="loginup" sec:authorize="isAnonymous()"
+                   th:href="@{/register}">Login/Signup</a>
                 <form name="logoutform" th:action="@{/logout}" method="post" th:hidden="true">
                     <input type="submit" value="Logout">
                 </form>
-                <a class="loginup_button" sec:authorize="isAuthenticated()" href="javascript:document.logoutform.submit()">Logout</a>
+                <a class="loginup_button" sec:authorize="isAuthenticated()"
+                   href="javascript:document.logoutform.submit()">Logout</a>
             </li>
             <li class="navbar_item">
-                <span class="navbar_links"  id="user_name" sec:authorize="isAuthenticated()" sec:authentication="principal.name"></span>
+                <span class="navbar_links" id="user_name" sec:authorize="isAuthenticated()"
+                      sec:authentication="principal.name"></span>
             </li>
         </ul>
     </div>
 </nav>
-<div>
-    <form>
-        <div>
-            <label>Email:</label>
-            <input type="text" th:value="${user.username}"/>
+<div class="container-fluild text-center">
+    <div class="text-center"><h2>Edit your user data</h2></div>
+    <form th:action="@{/profile}" method="post">
+        <div class="border border-secondary rounded p-3">
+            <div class="form-group row">
+                <label class="col-sm-4 col-form-label">Email</label>
+                <div class="col-sm-8">
+                    <input type="hidden" th:value="${#authentication.getPrincipal().getUsername()}" name="oldPlzEmail">
+                    <input type="email" th:value="${#authentication.getPrincipal().getUsername()}" class="form-control"
+                           style="max-width: 500px; margin: 0 auto" name="plzEmail">
+                </div>
+            </div>
+            <div class="border border-secondary rounded p-3">
+                <div class="form-group row">
+                    <label class="col-sm-4 col-form-label">Name</label>
+                    <div class="col-sm-8">
+                        <input type="text" name="plzName" th:value="${user.uName}" class="form-control"
+                               style="max-width: 500px; margin: 0 auto">
+                    </div>
+                </div>
+                <div class="border border-secondary rounded p-3">
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Password</label>
+                        <div class="col-sm-8">
+                            <input type="password" name="plzPassword" class="form-control"
+                                   style="max-width: 500px; margin: 0 auto">
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="main__btn m-2">Save Changes</button>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div>
-            <label>Name</label>
-            <input type="text" th:value="${user.name}"/>
-        </div>
-        <div>
-            <label>Password</label>
-            <input type="text" th:value="${user.password}"/>
-        </div>
+
     </form>
-</div>
+    <form th:action="@{/delete}" th:method="delete">
+        <input type="hidden" th:value="${#authentication.getPrincipal().getId()}" name="plzId">
+        <button type="submit" class="main__btn m-2">Delete User</button>
+    </form>
 </div>
 <script th:src="@{script.js}"></script>
 </body>
