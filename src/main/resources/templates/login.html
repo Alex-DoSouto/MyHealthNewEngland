@@ -32,7 +32,7 @@
                 <a href="#reviews" class="navbar_links" id="Reviews_page">Comments</a>
             </li>
             <li class="navbar_button">
-                <a th:href= "@{/register}" class="loginup_button" id="loginup">Login/Signup</a>
+                <a th:href= "@{/login}" class="loginup_button" id="loginup">Login/Signup</a>
             </li>
             <li class="navbar_item">
 
@@ -49,10 +49,10 @@
             You have been logged out.
         </div>
         <table class="mytable">
-            <tr><td><input name="email" type="email" placeholder="Enter Email"  required autofocus/></td></tr>
-            <tr><td><input name="password" type="password" placeholder="Password"/> </td></tr>
+            <tr><td><input name="email" type="email" placeholder="Enter Email" style="font-size:30px;" required autofocus/></td></tr>
+            <tr><td><input name="password" type="password" placeholder="Password" style="font-size:30px;"/> </td></tr>
             <tr><td><button class="main__btn" id="reg_btn" type="submit"><a>Login</a></td></tr>
-            <tr><td><a th:href="@{/register}">Don't have an account? Click here to Register.</a></td></tr>
+            <tr><td><a th:href="@{/register}" style="color:white;font-size:20px;">Don't have an account? Click here to Register.</a></td></tr>
         </table>
 </form>
     <script th:src="@{script.js}"></script>

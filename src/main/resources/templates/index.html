@@ -34,7 +34,7 @@
                     <a href="#reviews" class="navbar_links" id="Reviews_page">Comments</a>
                 </li>
                 <li class="navbar_button">
-                    <a class="loginup_button" id="loginup" sec:authorize="isAnonymous()" th:href= "@{/register}">Login/Signup</a>
+                    <a class="loginup_button" id="loginup" sec:authorize="isAnonymous()" th:href= "@{/login}">Login/Signup</a>
                     <form name="logoutform" th:action="@{/logout}" method="post" th:hidden="true">
                         <input type="submit" value="Logout">
                     </form>
