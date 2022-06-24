@@ -44,8 +44,19 @@
         </ul>
     </div>
 </nav>
+<div class="d-flex align-items center" style="background-color:#000000;height:100vh;">
+    <div style="background-color:#000000;" class="container-fluid text-center col-6 m-auto">
+<form>
+    <h2 class="text-light">Please Select your <strong style ="color:#da22ff">State</strong> </h2>
+    <Select id="stateSelect" name="states" style="font-size:30px;">
+        <option th:each="state : ${statedropdown}" th:text="${state}"></option>
+    </Select>
+    <div>
+    <button class="main__btn" id="stateb_btn" type="submit">Search</button>
+    </div>
+</form>
 
-<div class="d-flex justify-content-center text-center">
+<div class="d-flex justify-content-center text-center mt-5">
     <table class="table table-striped table-dark text-center m-auto w-auto flex-box flex-direction-column">
         <thead class="statetable">
         <tr>
@@ -61,6 +72,8 @@
         </tr>
         </tbody>
     </table>
+</div>
+    </div>
 </div>
 
 <script th:src="@{../script.js}"></script>

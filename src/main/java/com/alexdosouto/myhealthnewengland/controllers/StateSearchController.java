@@ -22,6 +22,7 @@ public class StateSearchController {
 
     @GetMapping("/state/{results}")
     public String stateResults(@PathVariable String results, Model model) {
+        model.addAttribute("statedropdown", healthProviderService.findDistinctState());
         model.addAttribute("stateresults", healthProviderService.findBypState(results));
         return "state_search_results";
     }

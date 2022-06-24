@@ -38,4 +38,5 @@ public class UserService {
     public User getPrincipal() {
         return userRepo.findByUEmail(SecurityContextHolder.getContext().getAuthentication().getName());
     }
+
 }
