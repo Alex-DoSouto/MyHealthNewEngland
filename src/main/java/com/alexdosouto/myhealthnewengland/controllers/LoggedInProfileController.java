@@ -40,9 +40,6 @@ public class LoggedInProfileController {
     @DeleteMapping("/delete")
     public String deleteUser(HttpServletRequest request) {
         userRepo.deleteById(Long.valueOf(request.getParameter("plzId")));
-        return "redirect:/login";
+        return "redirect:/register";
     }
-   /* @GetMapping("/logout")
-    @ResponseBody
-    public String logout(); */
 }

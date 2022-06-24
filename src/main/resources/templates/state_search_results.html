@@ -57,7 +57,7 @@
         <tbody>
         <tr th:each="stateresults : ${stateresults}">
             <td th:text="${stateresults.pName}"></td>
-            <td><a th:href="@{stateresults.pHyperLink}" th:text="${stateresults.pHyperLink}"></a> </td>
+            <td><a  th:href="|http://${stateresults.pHyperLink}|" target= "_blank" th:text="${stateresults.pHyperLink}"></a> </td>
             <td th:text="${stateresults.pState}"></td>
         </tr>
         </tbody>
