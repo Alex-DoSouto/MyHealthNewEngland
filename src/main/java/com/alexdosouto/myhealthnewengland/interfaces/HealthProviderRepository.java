@@ -9,6 +9,7 @@ import java.util.List;
 @Repository
 public interface HealthProviderRepository extends JpaRepository<HealthProvider, String> {
 
+
     @Query("SELECT DISTINCT p.pState FROM HealthProvider p")
     List<String> findDistinctState();
 

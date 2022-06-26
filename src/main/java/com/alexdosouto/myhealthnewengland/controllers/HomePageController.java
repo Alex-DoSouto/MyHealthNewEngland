@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class HomePageController {
     @GetMapping("")
     public String viewHomePage() {
+        // Directs User to the homepage of the site
         return "index";
     }
 }

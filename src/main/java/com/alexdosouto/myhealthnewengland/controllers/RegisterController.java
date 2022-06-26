@@ -17,12 +17,18 @@ public class RegisterController {
 
     @GetMapping("/register")
     public String viewSignUpForm(Model model) {
+        // Directs User to the registration page
         model.addAttribute("user", new User());
         return "form";
     }
     @PostMapping("/process_register")
     public String processRegistration(User user) {
-        userService.registerUser(user);
+        // registers user to the Database and throws an exception if the user enters the same email
+        try {
+            userService.registerUser(user);
+        } catch (Exception e) {
+            return "redirect:/register?failed";
+        }
         return"register_success";
     }
 

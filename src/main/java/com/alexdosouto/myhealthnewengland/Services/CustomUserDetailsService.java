@@ -13,6 +13,7 @@ public class CustomUserDetailsService implements UserDetailsService {
     @Autowired
     private UserRepository repo;
 
+    //find the user by their email and throws an exception if they aren't found used by the login controller
     @Override
     public UserDetails loadUserByUsername(String uEmail) throws UsernameNotFoundException {
         User user = repo.findByUEmail(uEmail);

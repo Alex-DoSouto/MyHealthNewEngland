@@ -8,6 +8,7 @@ import javax.persistence.*;
 @Data
 @Entity
 @Table(name="roles")
+// stores user roles in the database
 public class Role {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

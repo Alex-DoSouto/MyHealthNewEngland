@@ -15,6 +15,7 @@ import java.util.Set;
 @RequiredArgsConstructor
 @ToString
 @Table(name = "users")
+//stores users in the database
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

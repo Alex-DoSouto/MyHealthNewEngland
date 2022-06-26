@@ -11,8 +11,10 @@ import javax.transaction.Transactional;
 @Repository
 public interface UserRepository extends JpaRepository<User, Long> {
 
+    //Find the user by the email entered
     @Query("SELECT u FROM User u WHERE u.uEmail = ?1")
     User findByUEmail(String uEmail);
+
 
     @Transactional
     @Query("delete from User where uId=?1")

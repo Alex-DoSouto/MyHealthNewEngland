@@ -10,6 +10,7 @@ import javax.persistence.Table;
 @Data
 @Entity
 @Table(name = "health_providers")
+//Stores HealthProviders in the database
 public class HealthProvider {
     @Id
     @Column(nullable = false, unique = false, name = "provider_name")
