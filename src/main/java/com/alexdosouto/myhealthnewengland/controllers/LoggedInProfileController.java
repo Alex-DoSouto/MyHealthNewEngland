@@ -38,14 +38,17 @@ public class LoggedInProfileController {
         user.setUName(request.getParameter("plzName"));
         user.setUPassword(request.getParameter("plzPassword"));
         userService.updateUser(user);
+
+
         request.logout();
         return "redirect:/login";
     }
     @DeleteMapping("/delete")
-    public String deleteUser(HttpServletRequest request) throws ServletException {
+    public String deleteUser(HttpServletRequest request ) throws ServletException {
         //Deletes the user profile still logged in
-        userRepo.deleteById(Long.valueOf(request.getParameter("plzId")));
+       userRepo.deleteById(Long.valueOf(request.getParameter("plzId")));
         request.logout();
+
         return "redirect:/register";
     }
 }

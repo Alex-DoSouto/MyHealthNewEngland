@@ -5,8 +5,11 @@
     font-family: 'Roboto Flex', sans-serif;
     scroll-behavior: smooth;
 }
+ul {
+    margin: 0 !important;
+}
 
-.navbar {
+.navbarCustom {
     background: #131313;
     height: 80px;
     display: flex;
@@ -61,7 +64,7 @@
     align-items: center;
     justify-content: center;
     width: 125px;
-    text-decoration: none;
+    text-decoration: none !important;
     height: 100%;
     transition: all 0.3s ease;
 }
@@ -84,7 +87,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    text-decoration: none;
+    text-decoration: none !important;
     padding: 10px 20px;
     height: 100%;
     width: 100%;
@@ -97,7 +100,9 @@
     color: #fff;
     transition: all 0.3s ease;
 }
-
+.loginup_button:hover {
+    color: #fff !important;
+}
 @media screen and (max-width: 960px) {
     .navbar_container {
         display: flex;
@@ -276,7 +281,7 @@
   
   .main__btn a {
     position: relative;
-    z-index: 2;
+    z-index: 9999;
     color: #fff;
     text-decoration: none;
   }
@@ -291,6 +296,7 @@
     background: #ff1ead;
     transition: all 0.35s;
     border-radius: 4px;
+
   }
   
   .main__btn:hover {
@@ -449,7 +455,7 @@
     justify-content: center;
     flex-direction: column;
     align-content: flex-end;
-    background-color: #000000;
+    background: linear-gradient(to right, #161616, #000000);
     color: #fff;
     font-size: 30px;
     padding: 200px 0;

@@ -11,7 +11,7 @@ import org.springframework.test.annotation.Rollback;
 import java.util.List;
 
 import static org.assertj.core.api.Assertions.assertThat;
-
+// Testing the custom queries in the RoleRepository
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = Replace.NONE)
 @Rollback(false)

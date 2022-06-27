@@ -12,7 +12,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,300&display=swap" rel="stylesheet">
 </head>
 <body>
-<nav class="navbar">
+<nav class="navbarCustom">
     <div class="navbar_container">
         <a th:href="@{/}"  id="logo">MyHEALTH</a>
         <div class="navbar_toggle" id="mobile_menu">
@@ -41,10 +41,10 @@
 
 <form class="bodyga" th:action= "@{/process_register}" th:object="${user}" method="post" id="form">
         <h4>Please enter information to Register</h4>
-    <div th:if="${param.error}" role="alert" class="alert alert-error">
-        Account with that email already exists.
-    </div>
-        <table class="mytable">
+
+    <div style="color: red;" class="alert alert-danger" role="alert" th:text="${userExists}" th:if="${userExists}"></div>
+
+    <table class="mytable">
             <tr> <td><input id="name" th:field="*{uName}" style="font-size:30px;" name="name" type="text" placeholder="Enter Name"
                 required /></td> </tr>
             <tr><td><input type = "email" th:field="*{uEmail}" style="font-size:30px;" name = "EMail" id="emailID" placeholder="Enter Email" required /></td></tr>

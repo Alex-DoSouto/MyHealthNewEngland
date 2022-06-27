@@ -10,8 +10,9 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
-import java.util.Optional;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+
 
 @Service
 public class UserService {
@@ -48,5 +49,10 @@ public class UserService {
 
         return userRepo.findByUEmail(uEmail);
     }
+    public void deleteTheUser(HttpServletRequest request) throws ServletException {
+        userRepo.deleteById(Long.valueOf(request.getParameter("plzId")));
+        request.logout();
+    }
+
 
 }

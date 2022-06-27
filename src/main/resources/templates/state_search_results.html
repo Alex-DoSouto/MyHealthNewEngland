@@ -13,7 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,300&display=swap" rel="stylesheet">
 </head>
 <body>
-<nav class="navbar">
+<nav class="navbarCustom">
     <div class="navbar_container">
         <a th:href="@{../}" id="logo">MyHEALTH</a>
         <div class="navbar_toggle" id="mobile_menu">
@@ -44,15 +44,15 @@
         </ul>
     </div>
 </nav>
-<div class="d-flex align-items center" style="background-color:#161616;height:100vh;">
-    <div style="background-color:#161616;" class="container-fluid text-center col-6 m-auto">
-<form>
+<div class="d-flex align-items center" style="background:linear-gradient(to right, #161616, #000000);height:100vh;">
+    <div class="container-fluid text-center col-6 m-auto">
+<form >
     <h2 class="text-light">Please Select your <strong style ="color:#da22ff">State</strong> </h2>
     <Select id="stateSelect" name="states" style="font-size:30px;">
         <option th:each="state : ${statedropdown}" th:text="${state}"></option>
     </Select>
     <div>
-    <button class="main__btn" id="stateb_btn" type="submit">Search</button>
+        <button class="main__btn" id="stateb_btn" type="submit"><a>Search</a></button>
     </div>
 </form>
 
