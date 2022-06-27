@@ -1,0 +1,42 @@
+2022-06-26 18:00:20.936  INFO 80 --- [restartedMain] c.a.m.MyHealthNewEnglandApplication      : Starting MyHealthNewEnglandApplication using Java 17.0.3.1 on DESKTOP-S1DK8BP with PID 80 (D:\Intellij-workspace\MyHealthNewEngland\target\classes started by alexd in D:\Intellij-workspace\MyHealthNewEngland)
+2022-06-26 18:00:20.938  INFO 80 --- [restartedMain] c.a.m.MyHealthNewEnglandApplication      : No active profile set, falling back to 1 default profile: "default"
+2022-06-26 18:00:20.998  INFO 80 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-06-26 18:00:20.999  INFO 80 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-06-26 18:00:22.103  INFO 80 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2022-06-26 18:00:22.175  INFO 80 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 61 ms. Found 3 JPA repository interfaces.
+2022-06-26 18:00:22.907  INFO 80 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2022-06-26 18:00:22.916  INFO 80 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2022-06-26 18:00:22.917  INFO 80 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.63]
+2022-06-26 18:00:23.028  INFO 80 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2022-06-26 18:00:23.029  INFO 80 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2029 ms
+2022-06-26 18:00:23.196  WARN 80 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Cannot deserialize session attribute [SPRING_SECURITY_CONTEXT] for session [D8F7F029C2001D2CFDB82143E1075F1A]
+2022-06-26 18:00:23.470 DEBUG 80 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Building JPA container EntityManagerFactory for persistence unit 'default'
+2022-06-26 18:00:23.487  INFO 80 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2022-06-26 18:00:23.555  INFO 80 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.9.Final
+2022-06-26 18:00:23.747  INFO 80 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2022-06-26 18:00:23.853  INFO 80 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2022-06-26 18:00:24.008  INFO 80 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2022-06-26 18:00:24.028  INFO 80 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL5Dialect
+2022-06-26 18:00:24.641  INFO 80 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2022-06-26 18:00:24.649  INFO 80 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2022-06-26 18:00:24.754 DEBUG 80 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2022-06-26 18:00:24.786 DEBUG 80 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2022-06-26 18:00:24.827 DEBUG 80 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2022-06-26 18:00:24.930 DEBUG 80 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2022-06-26 18:00:25.019 DEBUG 80 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2022-06-26 18:00:25.074 DEBUG 80 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2022-06-26 18:00:25.085 DEBUG 80 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2022-06-26 18:00:25.098 DEBUG 80 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2022-06-26 18:00:25.106 DEBUG 80 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2022-06-26 18:00:25.115 DEBUG 80 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2022-06-26 18:00:25.116 DEBUG 80 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2022-06-26 18:00:25.125 DEBUG 80 --- [restartedMain] tor$SharedEntityManagerInvocationHandler : Creating new EntityManager for shared EntityManager invocation
+2022-06-26 18:00:25.182  WARN 80 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2022-06-26 18:00:25.525  INFO 80 --- [restartedMain] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.session.DisableEncodeUrlFilter@2032d6a, org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6a15d6f6, org.springframework.security.web.context.SecurityContextPersistenceFilter@6221aa15, org.springframework.security.web.header.HeaderWriterFilter@6a7ccfdf, org.springframework.security.web.csrf.CsrfFilter@22abcffd, org.springframework.security.web.authentication.logout.LogoutFilter@38c688db, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@15cf37e7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1eae3be6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@38dbe20d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7de0f0b4, org.springframework.security.web.session.SessionManagementFilter@35d08c88, org.springframework.security.web.access.ExceptionTranslationFilter@5b55128a, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6dae8037]
+2022-06-26 18:00:25.924  INFO 80 --- [restartedMain] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page template: index
+2022-06-26 18:00:26.425  INFO 80 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2022-06-26 18:00:26.466  INFO 80 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2022-06-26 18:00:26.478  INFO 80 --- [restartedMain] c.a.m.MyHealthNewEnglandApplication      : Started MyHealthNewEnglandApplication in 6.164 seconds (JVM running for 7.331)
+2022-06-26 18:01:29.676  INFO 80 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2022-06-26 18:01:29.680  INFO 80 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2022-06-26 18:01:29.684  INFO 80 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
