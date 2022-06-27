@@ -41,7 +41,7 @@ public class UserRepositoryTests {
 
     @Test
     public void testFindUserByUEmail() {
-        String uEmail = "Test@email.com";
+        String uEmail = "plz@plz.com";
 
         User user = userRepo.findByUEmail(uEmail);
         assertThat(user).isNotNull();
@@ -50,7 +50,7 @@ public class UserRepositoryTests {
     @Test
     public void testAddRoleToNewUser() {
         User user = new User();
-        user.setUEmail("mud@dud.com");
+        user.setUEmail("max@dud.com");
         user.setUPassword("password");
         user.setUName("mud");
 

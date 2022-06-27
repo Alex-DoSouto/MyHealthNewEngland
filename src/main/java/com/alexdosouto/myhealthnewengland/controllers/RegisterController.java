@@ -24,11 +24,7 @@ public class RegisterController {
     @PostMapping("/process_register")
     public String processRegistration(User user) {
         // registers user to the Database and throws an exception if the user enters the same email
-        try {
             userService.registerUser(user);
-        } catch (Exception e) {
-            return "redirect:/register?failed";
-        }
         return"register_success";
     }
 
