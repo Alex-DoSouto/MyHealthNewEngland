@@ -153,3 +153,9 @@ As a User, I want to be able to delete my account, so that I can get rid of any 
 - JavaScript
 - Bootstrap
 - MariaDB
+
+## Challenges encountered during project
+
+I'd say the number one challenge I faced in this case study was learning so many new concepts and design principles that I had never encountered.
+Doing research and deep diving into concepts is what allowed me to overcome these challenges along with being able to ask my instructors and fellow learners for their 
+input on the matter.  Another one was structuring my workflow so that I could work efficiently and tackle the proper problems in the proper order.
